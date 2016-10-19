@@ -4,13 +4,14 @@
  * @flow
  */
 
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
   View
 } from 'react-native';
+import fetchIt from 'fetch-it';
 
 export default class JsCoachApp extends Component {
   render() {
@@ -28,6 +29,13 @@ export default class JsCoachApp extends Component {
         </Text>
       </View>
     );
+  }
+
+  componentWillMount() {
+    fetchIt.get('http://httpbin.org/get?param1=param1')
+    .then((response) => response.json())
+    .then((json) => console.log(json))
+    .catch((error) => console.error(error));
   }
 }
 
