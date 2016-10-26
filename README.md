@@ -1,2 +1,6 @@
 # react-native-jscoach
-The js.coash app client
+
+
+* no-undef
+
+    `/* eslint-disable no-undef */`
