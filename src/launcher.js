@@ -4,7 +4,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import { ReactNativeSource } from './api/platform';
+import News from './api/news';
 import XhrRequest from './utils/xhrRequest';
 
 const styles = {
@@ -27,14 +27,9 @@ const styles = {
 };
 
 export default class JsCoachApp extends Component {
-  async componentDidMount() {
-    ReactNativeSource.then((res) => {
-      return res.json();
-    }).then((resp) => {
-      console.debug('print-resp', resp);
-    })
-    .catch((err) => {
-      console.warn('print-ReactApi', err);
+  componentDidMount() {
+    News.findAll().then((data) => {
+      console.debug('print-newsAll', data);
     });
   }
 

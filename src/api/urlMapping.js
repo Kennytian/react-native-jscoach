@@ -1,6 +1,3 @@
-import fetchFactory from 'fetch-factory';
-import { domainConfig } from './../config/app';
-
 /*
  *
  * 知乎日报 API 分析
@@ -30,8 +27,27 @@ import { domainConfig } from './../config/app';
  * http://news-at.zhihu.com/api/4/themes
  * */
 
+import { domainConfig } from '../config/app';
 
-/**
- * 自动补全 url
- * 例如传入 page:'story' 则自动补全为 http://news-at.zhihu.com/api/4/story/4232852/long-comments
- */
+const urlMapping = {
+
+  // 最新消息
+  latestNews: {
+    url: `${domainConfig}api/4/news/latest/`,
+    method: 'GET',
+    params: {},
+  },
+
+  // 过往消息
+  beforeNews: {
+    url: `${domainConfig}api/4/news/before/`,
+    method: 'GET',
+    params: {
+      id: '20131119',
+    },
+  },
+};
+
+
+export default urlMapping;
+

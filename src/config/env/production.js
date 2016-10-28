@@ -6,7 +6,7 @@ export const appConfig = {
 };
 
 export const domainConfig = {
-  API_DOMAIN: 'http://news.at.zhihu.com',
+  API_DOMAIN: 'http://news.at.zhihu.com/',
   WEB_DOMAIN: '',
   PASSPORT: '',
   IMG_URL: '',
